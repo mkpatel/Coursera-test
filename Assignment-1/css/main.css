@@ -15,15 +15,16 @@ body nav ul:after, body nav ul.sprite:after, .main_wrapper .content_header:after
   border-width: thin;
 }
 
-.main_wrapper .wrapper1 .user_browse, .main_wrapper .wrapper1 .user_submit {
-  padding: 5px;
+.main_wrapper .wrapper1 .user_submit, .main_wrapper .wrapper1 .user_upload {
   width: 40%;
+  text-shadow: 1px 1px  #e1e1e1;
 }
 
-section.login_info input[type="text"], section.persn_info input[type="text"], section.login_info input[type="email"], section.login_info input[type="password"] {
+.main_wrapper .wrapper2 section.login_info input[type="text"], .main_wrapper .wrapper2 section.persn_info input[type="text"], .main_wrapper .wrapper2 section.login_info input[type="email"], .main_wrapper .wrapper2 section.login_info input[type="password"] {
   padding: 5px 0 5px 5px;
   width: 50%;
   margin: 5px 0 5px 0;
+  font-family: 'Slabo 27px',serif;
 }
 
 .wrapper2 .form_submit input[type="button"], .wrapper2 .form_submit input[type="submit"] {
@@ -31,8 +32,8 @@ section.login_info input[type="text"], section.persn_info input[type="text"], se
   border-width: thin;
   box-shadow: 1px 1px #e1e1e1;
   float: right;
-  padding: 4px;
-  margin: 4px;
+  padding: 8px;
+  margin: 5px 7px 2px auto;
   text-decoration: none;
   display: block;
   font-family: "SegoeUI SemiBold";
@@ -44,11 +45,39 @@ section.login_info input[type="text"], section.persn_info input[type="text"], se
   color: #e1e1e1;
 }
 
+.main_wrapper .wrapper1 input[type="file"], .Greetings input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.main_wrapper .wrapper1 .user_submit, .Greetings .user_greetings {
+  border-radius: 3px;
+  background-color: buttonface;
+  display: inline;
+  align-items: flex-start;
+  text-align: center;
+  cursor: pointer;
+  color: buttontext;
+  border-width: 2px;
+  border-style: groove;
+  border-color: buttonface;
+  -webkit-appearance: push-button;
+}
+
+.main_wrapper .wrapper1 .user_submit:hover, .Greetings .user_greetings:hover {
+  background-color: #209982;
+  border: 1px solid black;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: #f0f0f0;
-  font-family: 'Lobster', cursive ;
+  font-family: 'Slabo 27px',serif;
 }
 body .Header {
   height: 60px;
@@ -115,11 +144,11 @@ body nav ul.sprite a {
   padding: 18px 0 8px 0;
 }
 .main_wrapper .user_form span {
-  padding-right: 15px;
   width: 30%;
   display: inline-block;
   margin: 0;
 }
+
 .main_wrapper .wrapper1 {
   float: left;
   width: 30%;
@@ -141,18 +170,18 @@ body nav ul.sprite a {
   padding: 5px;
   width: 55%;
   margin-top: 5px;
-  font-family: "Lobster",cursive;
-}
-.main_wrapper .wrapper1 .user_browse {
-  margin-left: 10px;
-  text-shadow: 1px 1px  #e1e1e1;
+  font-family: 'Slabo 27px',serif;
 }
 .main_wrapper .wrapper1 .user_submit {
-  text-shadow: 1px 1px  #e1e1e1;
-  display: block;
-  margin-top: 10px;
-  margin-left: 0;
+  margin-left: 10px;
+  padding: 5px;
 }
+.main_wrapper .wrapper1 .user_upload {
+  padding: 7px;
+  margin: 10px 0 0 0;
+  display: block;
+}
+
 .main_wrapper .wrapper2 {
   float: right;
   width: 70%;
@@ -166,12 +195,12 @@ body nav ul.sprite a {
   margin-bottom: 20px;
 }
 .wrapper2 section.Greetings input[type="text"] {
-  padding: 3px 0 3px 3px;
+  padding: 5px 0 4px 4px;
   width: 40%;
   margin: 5px 5px 5px 0;
 }
 .wrapper2 section.Greetings input[type="button"] {
-  padding: 3px 0 3px 3px;
+  padding: 5px 0 4px 4px;
   width: 20%;
   margin: 5px 5px 5px 0;
 }
@@ -193,6 +222,10 @@ body nav ul.sprite a {
 .wrapper2 .form_submit {
   background-color: #e1e1e1;
   margin: 0 auto 20px -320px;
-  height: 35px;
+  height: 45px;
   width: 960px;
+}
+
+.Greetings .user_greetings {
+  padding: 3px 10px 3px 10px;
 }

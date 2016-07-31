@@ -1,0 +1,190 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	padding: 0;
+	margin:0;
+}
+
+header div p {
+
+	font-size: 195%;
+	text-shadow: 1px 1px 1px grey;
+	font-weight: lighter;
+	font-synthesis: style;
+	background-color: #e1e1e1;
+	text-align: center;
+	padding:10px;
+	margin:2px;
+}
+
+#getinfo {
+
+	margin:0 auto;
+	text-align: center;
+
+}
+
+#Get_Objectinfo {
+
+	padding:8px 20px 8px 20px;
+	margin-top:15px;
+	margin-right:20px;
+	border-radius: 2px;
+	border:1px solid grey;
+	border-width: thin;
+	box-shadow: 1px 1px 1px #1e1e1e;
+	
+}
+
+#getinfo span {
+
+	display: inline-block;
+	color: green;
+	font-size: 16px;
+	font-weight: bold;
+	
+}
+
+#content {
+
+	text-align: center;
+	margin:0 auto;
+	margin-top:20px;
+	height:150px;
+	width: 500px;
+	border:1px solid black;
+	border-width: thin;
+
+}
+
+#content .title , #Animals_info .title {
+
+	color:white;
+	background-color:#3c3c3c;
+	padding:5px 5px 5px 5px;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	border-width:thin;
+	margin:14px 0 0 0;
+}
+
+#content p {
+
+	padding:2px;
+	margin:2px 0 0 0;
+	border-top:0.5px solid grey;
+	border-bottom:0.5px solid grey;
+	border-width:thin;
+	font-size:110%;
+}
+
+#add_noise {
+
+	margin-top:15px;
+	text-align: center;
+
+}
+
+#add_noise span {
+
+	font-size:1.1em;
+}
+#add_noise input[type='text'] {
+
+	padding:5px;
+	margin:0px 10px 0px 0px;
+
+}
+
+#add_noise input[type='button'] {
+
+	padding:5px 10px 5px 10px;
+	border-radius: 2px;
+	border:1px solid grey;
+	border-width: thin;
+	box-shadow: 1px 1px 1px #1e1e1e;
+}
+
+
+#add_noise span {
+
+	color:green;
+	font-weight: bold;
+	padding-left:15px;
+	font-size: 15px;
+}
+
+#add_whole_object {
+
+	margin-top: 30px;
+	text-align: center;
+}
+
+#add_whole_object > p {
+
+	font-size:20px;
+	font-weight: bold;
+	color:green;
+}
+
+#add_whole_object input[type='text'] {
+
+	padding:7px;
+	margin:2px 8px 2px 2px;
+	width:20%;
+
+}
+
+#add_whole_object span {
+
+	display:inline-block;
+	width:15%;
+	text-align: left;
+}
+
+#add_whole_object input[type='button'] { 
+
+			margin-top:20px;
+			padding:10px 20px 10px 20px;
+			border-radius: 2px;
+			border:1px solid grey;
+			border-width: thin;
+			box-shadow: 1px 1px 1px #1e1e1e;
+
+
+}
+
+#Animals_info {
+
+	text-align: center;
+	width: 50%;
+	height: 50%;
+	margin:0 auto;
+}
+
+#Animals_info p {
+
+	padding:5px;
+	border:1px solid grey;
+	text-shadow: 1px #3c3c3c;
+	margin:2px;
+	font-size: 15px;
+
+}
+
+#Animals_info span {
+
+	
+	
+	padding:0px 50% 0px 50%;
+	
+	
+
+}
+
+#Get_Objectinfo:hover ,#add_noise input[type='button']:hover,#add_whole_object input[type='button']:hover{ 
+	background-color: lightblue;
+
+}

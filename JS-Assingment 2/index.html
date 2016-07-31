@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Assignment-2</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/script.js"></script>
+		
+	</head>
+	<body>
+		<header>
+			<div> <p>Assignment-2</p></div>
+		</header>
+		<section class="wrapper">
+			<section>
+			<div id="getinfo">
+
+				<input type="button" id="Get_Objectinfo" value="GetInfo" onclick="GetAnimalInfo()" /><span> (First Click Here to Get Animal Info*) </span>
+
+			</div> <!-- End of #getinfo -->
+			
+			<div id="content"> <!-- Animal Content -->
+			</div>
+
+			<div id="add_noise">
+
+				<span>Enter Noise to Add into the Array: </span><input type="text" id ="value_noise" placeholder="Enter Value" /><input type="button" value="Add Noise & Show" onclick="SetAnimalNoise()" /> <span> (Enter Value and Clik on Add Noise*) </span>
+
+			</div> <!-- End of #add_noise -->
+
+			<div id="add_whole_object">
+
+				<p> Enter Info to Add Object into <q>Animals Collection </q></p>
+				<span><b>Enter Name : </b></span><input type="text" id ="value_n" placeholder="Enter Username" /><br>	
+				<span><b>Enter Tagline :</b> </span><input type="text" id ="value_t" placeholder="Enter Tagline" /><br>
+				<span><b>Enter Noises  :</b> </span> <input type="text" id ="value_ns" placeholder="Enter Noises with seperator as comma" /><br>
+				<input type="button" value="Submit & Show" onclick="SetAnimalObject()">
+
+			</div> <!-- End of #add_whole_object -->
+			
+			<div id="Animals_info"> <!-- Content of Animals collection -->
+			</div>
+
+			</section>		
+		</section>
+
+	</body>
+</html>
