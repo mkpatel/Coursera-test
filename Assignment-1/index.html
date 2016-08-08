@@ -11,13 +11,13 @@
     <header class="Header">
     	<nav class="navigation">
     		<ul>
-    			<li ><img class="img_user" src="images/google1.PNG" /></li>
+    			<li ><img class="img_user" src="images/face.png" /></li>
     			<li class="username"><p>Manthan</p></li>
     			<li>
     				<ul class="sprite">
-    					<li><a href="#" ><img src="images/google1.PNG" height="25px" width="25px" /> </a></li> 
-    					<li><a href="#" ><img src="images/twit.png" height="25px" width="25px" /> </a></li> 
-    					<li><a href="#" ><img src="images/search.png" height="25px" width="25px" /> </a></li> 
+    					<li><a href="#" ><img src="images/question.png" height="25px" width="25px" /> </a></li> 
+    					<li><a href="#" ><img src="images/settings.png" height="25px" width="25px" /> </a></li> 
+    					<li><a href="#" ><img src="images/shutdown.png" height="25px" width="25px" /> </a></li> 
                     </ul>
     			</li>
     		</ul> <!-- End of ul tag -->
@@ -43,29 +43,41 @@
     	
         <section class="wrapper2">
             <form id="user_form" action="" method="" class="user_form">
-                <section class="login_info">
-                    <p style="font-size:120%;"> Login Information </p>
+            <section class="login_info">
+                <p style="font-size:120%;"> Login Information </p>
                     
-                    <span>UserName:<sup>*</sup> </span><input class="" title="Enter Username" type="text" placeholder="Username" require/><br>
-                    <span>EmailID:<sup>*</sup>  </span><input type="email" placeholder="Email" require/> <br>
-                    <span>Password:<sup>*</sup>  </span><input type="password" title="Alphanumeric and Special Characters(!@#$%^&*()) allowed" placeholder="Password" require/><br>
-                    <span>Confirm Password:<sup>*</sup>  </span><input type="password" placeholder="Confirm Password" require/><i id="confirm_message"> Password and Confirm password should be same </i> <br>
-                    <span>Access Level :</span><input type="radio" placeholder="Select Your Profile" style="margin-top:10px;" name="a_level" value="Admin"> Admin 
-                    <input type="radio" name="a_level" value="User">User<br>
+                <span>UserName:<sup>*</sup> </span><input class="" title="Enter Username" type="text" placeholder="Username"/><br>
+                    
+                <span>EmailID:<sup>*</sup>  </span><input type="email" placeholder="Email"/> <br>
+                    
+                <span>Password:<sup>*</sup>  </span><input type="password" title="Alphanumeric and Special Characters(!@#$%^&*()) allowed" placeholder="Password" /><br>
+                    
+                 <span>Confirm Password:<sup>*</sup>  </span><input type="password" placeholder="Confirm Password"/><i id="confirm_message"> Password and Confirm password should be same </i> <br>
+                    
+                <span>Access Level :</span><input type="radio" style="margin-top:10px;" name="a_level" value="Admin" /> Admin 
+                    <input type="radio" name="a_level" value="User" />User<br>
+                    
                 </section> <!-- End of .login_info class -->
 
             <section class="persn_info">
+                
                 <p style="font-size:120%;"> Personal Information </p>
-                <span>FirstName: </span><input type="text" placeholder="FirstName" require/> <br>
-                <span>LastName: </span><input type="text" placeholder="LastName" require/> <br>
-                <span>EmployeeID:<sup><b>*</b></sup></span><input type="text" title="Only Numbers" placeholder="EmployeeID" require/> <br>
-                <span>Location:</span><input type="text" placeholder=" Location" /> <br>
-                <span>About:</span><input type="text" placeholder=" About">
+                
+                <span>FirstName: </span><input type="text" placeholder="FirstName" /> <br>
+                
+                <span>LastName: </span><input type="text" placeholder="LastName" pattern="^[a-zA-Z]{0,16}$" required/> <br>
+                
+                <span>EmployeeID:<sup><b>*</b></sup></span><input type="text" title="Only Numbers" placeholder="EmployeeID" /> <br>
+                
+                <span>Location:</span><input type="text" placeholder="Location" pattern="^[a-zA-Z\s]{0,20}$" /> <br>
+                
+                <span>About:</span><input type="text" pattern="^[a-zA-Z\s.]{0,100}$" placeholder="About">
+                
             </section> <!-- End of persn_info class -->
 
             <section class="Greetings">
                 <p style="font-size:120%;"> Add New Greetings </p>
-                <span>Upload Greetings: </span><input type="text" placeholder="Upload Greetings" /><label for="file-upload" class="user_greetings">
+                <span>Upload Greetings: </span><input type="text" id="f_id" placeholder="Upload Greetings" /><label for="file-upload" class="user_greetings">
                      Browse</label>
                  <input id="file-upload" type="file"/> <br>
                 <span class="text-comp">(upload greetings in .jpg , .png and .pdf format only)</span> <br>
@@ -75,7 +87,7 @@
             </section> <!-- End of .Greetings Section -->
 
             <section class="form_submit">
-                <input type="button" value="Cancel" />
+                <input type="button" id="reset_form" value="Cancel" />
                 <input type="button" id="submit_form" value="Save" >
              </section> <!-- End of .form_submit class -->
             </form> <!-- End of Form with class = .user_form -->

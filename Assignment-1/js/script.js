@@ -58,7 +58,7 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 		
 
-		//if(IsUserNameValid && IsEmailValid) { return true;} else {return false;}
+            if(IsUserNameValid && IsEmailValid) { return true;} else {return false;}
 		//return IsUserNameValid;
 		}
 
@@ -219,13 +219,36 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 	});
 
-	var file = document.getElementById("file-upload");
-	file.onchange = function() {
-	    document.getElementById('fileid').value = file.value.replace("C:\\fakepath\\","");
+	var file_profile = document.getElementById("file-upload");
+	file_profile.onchange = function() {
+	    document.getElementById('fileid').value = file_profile.value.replace("C:\\fakepath\\","");
 	};
 
+    /* var file_greeting = document.getElementById("file-upload");
+	file_greeting.onchange = function() {
+	    document.getElementById('f_id').value = file_greeting.value.replace("C:\\fakepath\\","");
+	}; */
 	
-
+    
+    /*--- Reset the Form Values -------------------------------------------------- */
+    
+    jQuery("#reset_form").click(function() { 
+    
+        jQuery("input[placeholder='Username']").val("");
+        jQuery("input[placeholder='Email']").val("");
+        jQuery("input[placeholder='Password']").val("");
+        jQuery("input[placeholder='Confirm Password']").val("");
+        jQuery("input[placeholder='FirstName']").val("");
+        jQuery("input[placeholder='LastName']").val("");
+        jQuery("input[placeholder='EmployeeID']").val("");
+        jQuery("input[placeholder='Location']").val("");
+        jQuery("input[placeholder='About']").val("");
+        jQuery('input[name="a_level"]').prop('checked', false);
+        jQuery("#fileid").val("");
+        jQuery("#f_id").val("");
+    
+    });
+    
 
  });
 

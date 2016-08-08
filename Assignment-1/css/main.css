@@ -32,7 +32,7 @@ body nav ul:after, body nav ul.sprite:after, .main_wrapper .content_header:after
   width: 50%;
   margin: 5px 0 5px 0;
   border:1px solid gray;
-  box-shadow: 1px 1px 8px -4px #3c3c3c;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   font-weight: 400;
   text-transform: none;
   font-family: 'Lora',serif;
@@ -71,17 +71,15 @@ body nav ul:after, body nav ul.sprite:after, .main_wrapper .content_header:after
 
 /* line 85, ../sass/base/_inherited.scss */
 .main_wrapper .wrapper1 .user_submit, .Greetings .user_greetings {
-  border-radius: 3px;
-  background-color: buttonface;
-  display: inline;
-  align-items: flex-start;
+ 
+  background-color: gainsboro;
+  display:inline-block;
   text-align: center;
-  cursor: pointer;
-  color: buttontext;
-  border-width: 2px;
-  border-style: groove;
-  border-color: buttonface;
-  -webkit-appearance: push-button;
+  -webkit-appearance:button;
+  -moz-appearance:button;
+   box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  -ms-appearance:button;
+    
 }
 
 /* line 103, ../sass/base/_inherited.scss */
@@ -177,6 +175,7 @@ body nav ul.sprite a {
 .main_wrapper .user_form span {
   width: 30%;
   display: inline-block;
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.12);
   margin: 0;
   font-family: 'Lora',serif;
   font-size: 90%;
@@ -198,7 +197,7 @@ body nav ul.sprite a {
 /* line 154, ../sass/modules/_module.scss */
 .main_wrapper .wrapper1 > p {
   margin: 8px 0 4px 0;
-  text-shadow: 1px 1px grey;
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.4);
   font-size: 90%;
   padding: 2px;
 }
