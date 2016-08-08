@@ -4,32 +4,81 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 	var email;
 	var Password;
 	var C_password;
+	var lastname;
+	var firstname;
+	var location;
+	var about;
+	var acc_level;
 	
 
 	
 	jQuery("#submit_form").click(function() {
 
+		/*-- Fetching the values */
 		username = jQuery("input[placeholder='Username']").val();
 		email = jQuery("input[placeholder='Email']").val();
 		Password = jQuery("input[placeholder='Password']").val();
 		C_password = jQuery("input[placeholder='Confirm Password']").val();
 		firstname = jQuery("input[placeholder='FirstName']").val();
 		empid = jQuery("input[placeholder='EmployeeID']").val();
+		lastname =jQuery("input[placeholder='LastName']").val();
+        location = jQuery("input[placeholder='Location']").val();
+        about = jQuery("input[placeholder='About']").val();
+        acc_level = jQuery('input[name="a_level"]:checked').val();
 
+		
 		if(Perform_validation()) {
 
-				jQuery("#user_form").submit();
+				/* If all inputs validates submit the form ---- */
+				var html = "<p><span>UserName: "+username+"</span></p>"+
+						"<p><span>EmailID: "+email+"</span></p>"+
+						"<p><span>Password: "+Password+"</span></p>"+
+						"<p><span>Access Level: "+acc_level+"</span></p>"+
+						"<p><span>EmployeeID: "+empid+"</span></p>"+
+						"<p><span>FirstName: "+firstname+"</span></p>"+
+						"<p><span>LastName: "+lastname+"</span></p>"+
+						"<p><span>Location: "+location+"</span></p>"+
+						"<p><span>About: "+about+"</span></p>"+
+						"<button id='exit'>Close" ;
+
+						var dialog = document.getElementById('Form_output'); 
+				    jQuery("#Form_output").html(html);
+					dialog.show();  
+				    document.getElementById('exit').onclick = function() {  
+				        dialog.close();  
+				    }; 
+
+				//jQuery("#user_form").submit();
 		}
 		else
 		{
 
-			alert("UserName: "+username+"\n"+
-					"EmailId: "+email+"\n"+
-					"Password :"+Password+"\n"+
-					"EmployeeID :"+empid+"\n"+
-					"FirstName :"+firstname+"");
+			var html = "<p><span>UserName: "+username+"</span></p>"+
+						"<p><span>EmailID: "+email+"</span></p>"+
+						"<p><span>Password: "+Password+"</span></p>"+
+						"<p><span>Access Level: "+acc_level+"</span></p>"+
+						"<p><span>EmployeeID: "+empid+"</span></p>"+
+						"<p><span>FirstName: "+firstname+"</span></p>"+
+						"<p><span>LastName: "+lastname+"</span></p>"+
+						"<p><span>Location: "+location+"</span></p>"+
+						"<p><span>About: "+about+"</span></p>"+
+						"<button id='exit'>Close" ;
+
+
+				/* Code to Display Output Dialog */
+			   
+				    var dialog = document.getElementById('Form_output'); 
+				    jQuery("#Form_output").html(html);
+					dialog.show();  
+				    document.getElementById('exit').onclick = function() {  
+				        dialog.close();  
+				    };  
+
+				    // var isIE = /*@cc_on!@*/false || !!document.documentMode; to check ie or not
 
 		}
+
+		/*-- Function to perform validation --*/
 
 		function Perform_validation() {
 		
@@ -39,14 +88,17 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 		var IsPassCnPassSame = false;
 		var IsFirstNameValid = validate_firstname(firstname);
 		var IsEmployeeidValid = validate_employeeid(empid);
+		var IsLastNameisValid = validate_lastname(lastname);
+		var IsLocationisValid = validate_location(location);
+		var IsAboutisValid = validate_about(about);
 
-		//alert(IsPasswordValid.first + " " + IsPasswordValid.second );
 		
 		if(IsPasswordValid.first && IsPasswordValid.second ) {
 
 			if(Password === C_password) {
 
-				IsPassCnPassSame = true
+				IsPassCnPassSame = true; // if both password matches then procceed
+
 				jQuery("#confirm_message").css("visibility","hidden");
 			} else {
 
@@ -55,11 +107,12 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 		}
 
 
-
+		if(IsUserNameValid && IsEmailValid && IsPassCnPassSame && IsEmployeeidValid && IsFirstNameValid && IsLastNameisValid && IsLocationisValid && IsAboutisValid) {
+		 return true;
+		} else {
+		 	return false;
+		 }
 		
-
-            if(IsUserNameValid && IsEmailValid) { return true;} else {return false;}
-		//return IsUserNameValid;
 		}
 
 		/* function to validate username */
@@ -181,13 +234,18 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 		function validate_firstname(firstname) {
 
+			if(firstname === undefined || firstname === "") {
+				return true;
+			} else {
+
 			var Re_firstname = /^[A-Za-z]{3,8}$/;
 
 			if(Re_firstname.test(firstname)) { return true; } else {
 
 				jQuery("input[placeholder='FirstName']").attr("placeholder","FirstName should be >3 & <8").val("").focus().blur("");
+				return false;
+				}
 			}
-
 		}
 
 
@@ -214,8 +272,52 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 
 		}
 
-		} 
+		}
 
+		/* Validating the LastName */
+
+		function validate_lastname(lastname) {
+
+			alert(lastname);
+			var Re_lastname = /^[A-Za-z]*$/;
+
+			if(Re_lastname.test(lastname)) { return true; } else {
+
+				jQuery("input[placeholder='LastName']").attr("placeholder","LastName should be in alphabatic").val("").focus().blur("");
+				return false;
+			}
+
+
+		}
+
+		function validate_location(location){
+
+			alert(location);
+			var Re_location = /^[A-Za-z\s]*$/;
+
+			if(Re_location.test(location)) { return true; } else {
+
+				jQuery("input[placeholder='Location']").attr("placeholder","Location should be in alphabatic").val("").focus().blur("");
+				return false;
+			}
+
+		}
+
+
+		function validate_about(about) {
+			alert(about);
+			var Re_about = /^[A-Za-z\s]*$/;
+
+			if(Re_about.test(about)) { return true; } else {
+
+				jQuery("input[placeholder='About']").attr("placeholder","About should be in alphabatic").val("").focus().blur("");
+				return false;
+			}
+
+		}
+
+
+		/*----------------------------- End of submit event --------------------- */
 
 	});
 
@@ -224,10 +326,10 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
 	    document.getElementById('fileid').value = file_profile.value.replace("C:\\fakepath\\","");
 	};
 
-    /* var file_greeting = document.getElementById("file-upload");
+     var file_greeting = document.getElementById("file-upload_greet");
 	file_greeting.onchange = function() {
 	    document.getElementById('f_id').value = file_greeting.value.replace("C:\\fakepath\\","");
-	}; */
+	}; 
 	
     
     /*--- Reset the Form Values -------------------------------------------------- */
@@ -249,6 +351,7 @@ jQuery(document).ready(function() {     /* Doing everything after Document is re
     
     });
     
+    /* -------------- End of Reset Form button function ------------------*/
 
  });
 
