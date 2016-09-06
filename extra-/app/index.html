@@ -13,7 +13,7 @@
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,71 +23,25 @@
     <![endif]-->
     
 </head>
-    
+
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="">Library Management System</a>
-                </div>
 
-            </div>
-        </nav>
-    
-    </div>
-</div>
-    
-<div class="container wrapper">
-<div class="row">
-    <div class="col-xs-6 text-center">
-        <button type="button" class="btn btn-sm btn-primary">
-         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Add New Book</button>
-        <!--<i class="fa fa-file-text" aria-hidden="true"></i>-->
-    </div>
+    <!-- Loading the views -->
+    <div ui-view="header"></div> <!-- Header -->
+    <div ui-view="content"></div> <!-- Content -->
+    <div ui-view="footer"></div>  <!-- footer --> 
 
-    <div class="col-xs-6 text-center">
-        <button type="button" class="btn btn-sm btn-primary">
-         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Add New Author</button>
-         <!--<i class="fa fa-user-plus" aria-hidden="true"></i>-->
-    </div>
-    </div>
-</div>
-    
-<div class="container" ng-controller="bookController">
-    <div class="jumbotron">
-        <div class="table-responsive">
-            <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th class="text-center">ISBN</th>
-                <th class="text-center">Title</th>
-                <th class="text-center">Author</th>
-            </tr>
-            </thead>
-            <tbody ng-repeat="book in books">
-            <tr>
-                <td class="text-center"><a href="#">{{book.isbn}}</a></td>
-                <td class="text-center">{{book.title}}</td>
-                <td class="text-center"><a href="#" role="button">{{book.author}}</a></td>
-            </tr>
-            </tbody>
-            </table>
-        
-        </div>
-        
-        
-    </div>
-</div>
-
-    
-    
 
 <script src="../bower_components/angular/angular.min.js"></script>
-<script src="scripts/app.js"></script>    
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="scripts/app.js"></script>
+<script src="controllers/controller.js"></script> 
+<script src="services/services.js"></script>    
 </body>
-    
-    
 </html>
+
     
+    
+
+
+ 
