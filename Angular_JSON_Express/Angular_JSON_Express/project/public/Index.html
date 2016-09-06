@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!---jquery library----->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Angularjs library -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<!---Javascript source----->
+        <script src=
+        "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+		<script src="script.js"></script>
+        
+        
+		<!---Stylesheet link----->
+		<link rel="stylesheet" href="stylesheet.css"/>
+	</head>
+	<body ng-app="myApp">
+		<!---Div for Table and button----->
+		<div class="table-1" ng-controller="order">
+			<!---Create Table----->
+			<table style="width:100%">
+			<!---Table Headers----->
+			<tr><th ng-click="myFunction()" ng-dblclick="myFunction2()" name="firstName">FirstName</th>
+			<th>LastName</th><th>Email</th>
+			<th>Extention</th><th>Joining date</th>
+			<th ng-click="myFunction3()">Is</th>
+			</tr>
+             
+          
+			<!---Table Body----->
+			<tbody id="table-body">
+
+			</tbody>
+			   <tr ng-repeat="employe in employess | orderBy:ayush()">
+                <td>{{employe.firstName}}</td>
+                <td>{{employe.lastName}}</td> 
+                <td>{{employe.email}}</td>
+                <td>{{employe.extention}}</td>
+                <td>{{employe.doj}}</td>
+                <td>{{employe.isOnBench}}</td>
+                <td><a href="#edit" ng-click="editEmployee(employe)">edit</a>|<a href="#update"></a></td>   
+            
+                </tr>
+
+			</table>
+			<!--Button----->
+			<button class="btn-1" ng-click="clickfun()" >Load Data</button>
+            <div ng-view></div>
+        <!--    <form class="form1"  ng-submit="submit()">
+                FirstName : <input type="text" value="fname" ng-model="firstname"><br/>
+                LastName : <input type="text" value="lname" ng-model="lastname"><br/>
+                Email : <input type="email" value="fname" ng-model="email"><br/>
+                Extension : <input type="number" value="fname" ng-model="ext"><br/>
+                DOJ : <input type="number" value="fname" ng-model="doj"><br/>
+               <input type="radio" name="isOnBench" value="true" ng-model="t"> True<br>
+                <input type="radio" name="isOnBench" value="false" ng-model="t"> False<br>
+            
+                <input type="submit" value="submit">
+            </form>
+            -->
+
+		</div>
+	</body>
+
+</html>

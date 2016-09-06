@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp"> <!-- Configure the page to be an angular application. -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    
+    <title>Library Management System</title>
+    
+    <!-- Bootstrap -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+    
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">Library Management System</a>
+                </div>
+
+            </div>
+        </nav>
+    
+    </div>
+</div>
+    
+<div class="container wrapper">
+<div class="row">
+    <div class="col-xs-6 text-center">
+        <button type="button" class="btn btn-sm btn-primary">
+         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Add New Book</button>
+        <!--<i class="fa fa-file-text" aria-hidden="true"></i>-->
+    </div>
+
+    <div class="col-xs-6 text-center">
+        <button type="button" class="btn btn-sm btn-primary">
+         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Add New Author</button>
+         <!--<i class="fa fa-user-plus" aria-hidden="true"></i>-->
+    </div>
+    </div>
+</div>
+    
+<div class="container" ng-controller="bookController">
+    <div class="jumbotron">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">ISBN</th>
+                <th class="text-center">Title</th>
+                <th class="text-center">Author</th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="book in books">
+            <tr>
+                <td class="text-center"><a href="#">{{book.isbn}}</a></td>
+                <td class="text-center">{{book.title}}</td>
+                <td class="text-center"><a href="#" role="button">{{book.author}}</a></td>
+            </tr>
+            </tbody>
+            </table>
+        
+        </div>
+        
+        
+    </div>
+</div>
+
+    
+    
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="scripts/app.js"></script>    
+</body>
+    
+    
+</html>
+    

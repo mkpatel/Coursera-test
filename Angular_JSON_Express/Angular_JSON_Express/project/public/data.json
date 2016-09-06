@@ -1,0 +1,32 @@
+[
+	 {
+		"firstName": "Neha",
+		"lastName": "Bhansali",
+		"email": "Nehabha@cybage.com",
+		"extention": "6624",
+		"doj": "04-07-2016",
+		"isOnBench": false
+	}, {
+		"firstName": "Ayush",
+		"lastName": "Solanki",
+		"email": "ayushso@cybage.com",
+		"extention": "6233",
+		"doj": "04-07-2016",
+		"isOnBench": false
+	}, {
+		"firstName": "Mansi",
+		"lastName": "Thakkar",
+		"email": "mansit@cybage.com",
+		"extention": "6602",
+		"doj": "04-07-2016",
+		"isOnBench": true
+	},
+	{
+		"firstName": "Manthan",
+		"lastName": "Patel",
+		"email": "Manthanp@cybage.com",
+		"extention": "6603",
+		"doj": "04-07-2016",
+		"isOnBench": true
+	}
+]

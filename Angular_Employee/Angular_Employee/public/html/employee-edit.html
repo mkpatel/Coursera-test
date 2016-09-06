@@ -1,0 +1,52 @@
+<form class="form-horizontal">
+	<div class="form-group">
+		<label for="FirstName" class="col-sm-5 col-xs-5 control-label">FirstName</label>
+		<div class="col-sm-4 col-xs-4">
+			<input type="text" class="form-control" id="FirstName" placeholder="FirstName" ng-model="emp.firstName" required></input>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="LastName" class="col-sm-5 col-xs-5 control-label">LastName</label>
+		<div class="col-sm-4 col-xs-4">
+			<input type="text" class="form-control" id="LastName" placeholder="LastName" ng-model="emp.lastName" required></input>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="email" class="col-sm-5 col-xs-5 control-label">Email</label>
+		<div class="col-sm-4 col-xs-4">
+			<input type="text" class="form-control" id="email" placeholder="Email" ng-model="emp.email" required></input>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="extention" class="col-sm-5 col-xs-5 control-label">Extention</label>
+		<div class="col-sm-4 col-xs-4">
+			<input type="text" class="form-control" id="extention" placeholder="Extention Number" ng-model="emp.extention"></input>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="doj" class="col-sm-5 col-xs-5 control-label">Date of Joining</label>
+		<div class="col-sm-4 col-xs-4">
+			<input type="text" class="form-control" id="doj" placeholder="Date Of Joining" ng-model="emp.doj"></input>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="doj" class="col-sm-5 col-xs-5 control-label">Is on Bench?</label>
+		
+			<div class="radio col-sm-1">
+			<label>
+				<input type="radio" id="radioTrue"  ng-model="emp.isOnBench" value="true" checked />True
+				</label>
+			</div>
+		
+		
+			<div class="radio col-sm-1">
+			<label>
+				<input type="radio" id="radioFalse" ng-model="emp.isOnBench" value="false"/>False
+				</label>
+			</div>
+		
+	</div>
+	<div class="form-group">
+		<a href="#"><button class="btn btn-primary" type="submit">Save</button></a>
+	</div>
+</form>

@@ -1,0 +1,23 @@
+[{
+		"firstName": "John",
+		"lastName": "Doe",
+		"email": "johnd@cybage.com",
+		"extention": "6624",
+		"doj": "04-07-2016",
+		"isOnBench": "false"
+	}, {
+		"firstName": "Ayush",
+		"lastName": "So",
+		"email": "ayushso@cybage.com",
+		"extention": "6233",
+		"doj": "04-07-2016",
+		"isOnBench": "false"
+	}, {
+		"firstName": "Mansi",
+		"lastName": "T",
+		"email": "mansit@cybage.com",
+		"extention": "6602",
+		"doj": "04-07-2016",
+		"isOnBench": "true"
+}]
+	
