@@ -12,9 +12,9 @@
             </thead>
             <tbody ng-repeat="book in books">
             <tr>
-                <td class="text-center"><a href="#">{{book.isbn}}</a></td>
+                <td class="text-center"><a ui-sref="app.bookDetails({id: book.isbn})">{{book.isbn}}</a></td>
                 <td class="text-center">{{book.title}}</td>
-                <td class="text-center"><a href="#" role="button">{{book.author}}</a></td>
+                <td class="text-center"><a ui-sref="app.authDetails({id: book.author})">{{book.author}}</a></td>
             </tr>
             </tbody>
             </table>

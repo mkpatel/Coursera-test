@@ -48,6 +48,40 @@ angular.module('mainApp',['ui.router'])
                         templateUrl: 'views/newAuthor.html'
                    }
                 }
+            })
+  
+    /*route for book details*/
+  
+    .state('app.bookDetails',{
+      
+            url:'bookDetails/:id',
+            views:{
+                
+                'content@': {
+                    
+                    templateUrl :'views/bookDetails.html',
+                    controller:'bookController'
+                    }
+                
+                }
+
+            })
+  
+    /*route for author details*/
+  
+    .state('app.authDetails',{
+      
+            url:'authDetails/:id',
+            views:{
+                
+                'content@': {
+                    
+                    templateUrl :'views/authDetails.html',
+                    controller:'authController'
+                    }
+                
+                }
+
             });
 
     $urlRouterProvider.otherwise('/');

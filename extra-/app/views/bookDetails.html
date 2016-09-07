@@ -1,0 +1,28 @@
+<div class="container">
+
+<div class="jumbotron">
+
+    <div class="media">
+         <div class="media-left">
+            
+            <i class="fa fa-book fa-5x" aria-hidden="true"></i>
+             
+        </div>
+        
+      <div class="media-body">
+         
+         <h4 class="media-heading"> {{book.title}}</h4>
+          
+         <h6><label>ISBN:</label>  {{book.isbn}}</h6>
+         <h6><label>Author:</label> {{book.author}}</h6>
+         <h6><label>Price:</label> {{book.price | currency}} </h6>
+         <h6><label>Available On:</label> <i ng-repeat = "a in book.availableOn"> {{a}}</i> </h6>
+         <!--<i ng-repeat = "a in book.availableOn"> {{a}}</i>-->
+          
+      </div>
+        
+    </div>
+    
+
+</div>
+</div>
