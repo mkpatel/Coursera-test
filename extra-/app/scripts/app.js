@@ -35,7 +35,8 @@ angular.module('mainApp',['ui.router'])
                 url:'newBook',
                 views: {
                     'content@': {
-                        templateUrl: 'views/newBook.html'
+                        templateUrl: 'views/newBook.html',
+                        controller:'bookController'
                    }
                 }
             })
@@ -45,7 +46,8 @@ angular.module('mainApp',['ui.router'])
                 url:'newAuthor',
                 views: {
                     'content@': {
-                        templateUrl: 'views/newAuthor.html'
+                        templateUrl: 'views/newAuthor.html',
+                        controller:'authController'
                    }
                 }
             })

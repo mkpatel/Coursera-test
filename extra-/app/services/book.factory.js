@@ -36,10 +36,112 @@ angular.module('mainApp')
 
     /*Returning a single book */
     
-   /* bookfac.getBook = function(index) {
+    bookfac.getBook = function(isbn) {
 
-    	return books[index];
-    }*/
+        var deferred = $q.defer();    /*Creating an deffered object */
+         
+        $http({
+
+                method:'POST',
+                url: baseUrl+'/book/byisbn',
+                data:'isbn='+isbn+'',
+                headers : {'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'}
+
+            }).success(function(data){
+                
+                deferred.resolve(data); /*On success resolved the Data*/
+
+            }).error(function(data){
+ 
+                deferred.reject('There was an error'); /*On Failure show the error*/
+
+            })
+
+            return deferred.promise; /*returing the promise*/
+
+            };
+    
+    /*Creating a New Book */
+    
+     bookfac.createBook = function(newBook) {
+
+         var deferred = $q.defer();    /*Creating an deffered object */  
+        
+        $http({
+
+                method:'POST',
+                dataType:'JSON',
+                url: baseUrl+'/book/new',
+                data:$.param(newBook),
+                headers : {'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'}
+            }).success(function(data){
+                
+                deferred.resolve(data); /*On success resolved the Data*/
+
+            }).error(function(data){
+ 
+                deferred.reject('There was an error'); /*On Failure show the error*/
+
+            })
+
+            return deferred.promise; /*returing the promise*/
+
+        }; /*end of New Book function */
+    
+   
+     bookfac.updateBook = function(book) {
+        
+        var deferred = $q.defer();    /*Creating an deffered object */  
+        
+        $http({
+
+                method:'PUT',
+                url: baseUrl+'/book/update',
+                data:$.param(book),
+                headers : {'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'}
+            }).success(function(data){
+                
+                deferred.resolve(data); /*On success resolved the Data*/
+
+            }).error(function(data){
+ 
+                deferred.reject('There was an error'); /*On Failure show the error*/
+
+            })
+
+            return deferred.promise; /*returing the promise*/
+        
+    };
+    
+    
+    /*function to remove the author */
+    
+    bookfac.removeBook = function(bookID) {
+        
+        var deferred = $q.defer();    /*Creating an deffered object */  
+        
+        $http({
+
+                method:'DELETE',
+                url: baseUrl+'/book/remove',
+                data:'isbn='+bookID+'',
+                headers : {'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'}
+            }).success(function(data){
+                
+                deferred.resolve(data); /*On success resolved the Data*/
+                
+            }).error(function(data){
+ 
+                deferred.reject('There was an error'); /*On Failure show the error*/
+
+            })
+
+            return deferred.promise; /*returing the promise*/
+        
+    };
+    
+    
+
 
     return bookfac;
 
